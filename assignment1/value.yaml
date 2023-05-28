@@ -1,0 +1,4 @@
+tomcatPassword: bHkgM7J5hX
+service:
+  type: NodePort
+  nodePort: 30006
