@@ -1,24 +1,15 @@
-# Default values for firstchart.
+# Default values for couponservice.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-my:
-  flag: false
-  values:
-    - usa
-    - japan
-    - vn
-    - mexico
-    - brazil
-    - uk
-
 
 replicaCount: 1
 
 image:
-  repository: nginx
+  registry: docker.io
+  repository: bharatht19/couponservice
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""
@@ -47,8 +38,10 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 9091
+  targetPort: 9091
+  nodePort: 32761
 
 ingress:
   enabled: false
@@ -94,7 +87,11 @@ affinity: {}
 mysql:
   auth:
     rootPassword: test1234
+    database: mydb
   primary:
     service:
       type: NodePort
-      nodePort: 30788
+      nodePort: 32762
+  fullnameOverride: docker-mysql
+  initdbScriptsConfigMap: mysql-initdb-config
+

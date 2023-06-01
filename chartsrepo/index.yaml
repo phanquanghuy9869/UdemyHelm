@@ -1,0 +1,33 @@
+apiVersion: v1
+entries:
+  firstchart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-05-30T23:29:59.2874828+07:00"
+    dependencies:
+    - import-values:
+      - child: primary.service
+        parent: mysqlService
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: '>= 8.8.6 and =< 9.9.9'
+    description: A Helm chart for Kubernetes
+    digest: 3c38204eb22c0d7e657920d6c30b8ccb0f740448cc233a8fd5a83983cd70f856
+    home: https://abbio.edu.vn
+    icon: https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png
+    keywords:
+    - db project
+    - healthcare
+    maintainers:
+    - email: test@test.com
+      name: bharath
+    - email: test@test.com
+      name: John
+    name: firstchart
+    sources:
+    - http://abbio.edu.vn
+    type: application
+    urls:
+    - firstchart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-30T23:29:59.2839418+07:00"
